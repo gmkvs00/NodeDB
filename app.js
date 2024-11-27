@@ -16,8 +16,10 @@ app.use(express.urlencoded({extended:false}))
 
 app.use((req,res,next)=>{
     console.log("hello middleware");
-   // return res.json({msg:"hello middleware"});
-   next();
+   fs.appendFile("log.txt",`${Date.now()}:${req.method}:${req.path}\n`,(err,data)=>{
+    next();
+   });
+   
 })
 
 app.get("/",(req,res)=>{
