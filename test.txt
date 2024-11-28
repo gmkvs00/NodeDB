@@ -1,0 +1,3 @@
+ schema - Define the model  
+    schem -model
+    useing model we do CRUD operstion 
